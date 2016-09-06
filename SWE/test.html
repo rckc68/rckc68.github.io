@@ -23,7 +23,7 @@
             cache: true,
             success: function(data) {
                 
-                var candidateBar = d3.select("#graph2").selectAll("div#graph2").data(data.estimates),
+                var candidateBar = d3.select("#graph2").selectAll("div").data(data.estimates),
                     candidateWrapper = candidateBar.enter().append("div").classed("group", true);
                 
                 candidateWrapper.append("div")
@@ -32,7 +32,7 @@
                         return candidate.choice + " " + candidate.value + "%";
                     });
                 
-                candidateWrapper.append("div#graph2")
+                candidateWrapper.append("div")
                     .classed("bar", true)
                     .transition()
                     .duration(1000)
