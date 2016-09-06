@@ -5,6 +5,7 @@
 This webpage shows the current standings of the 2016 Presidential Primary  
 
 Tools used:
+
 *[jQuery](https://jquery.com/)  
 
 *[D3.js](https://d3js.org/)  
