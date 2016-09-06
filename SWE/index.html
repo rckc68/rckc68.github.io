@@ -45,7 +45,9 @@
                     .transition()
                     .duration(1000)
                     .on('click', function(onclick){
-                        return onclick.style("background-color": red);
+                        .style("background-color", function(color){
+                            return color.style("background-color":red);
+                        });
                     });
                 
             }
