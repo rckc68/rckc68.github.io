@@ -41,6 +41,12 @@
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
                     });
+                candidateWraper.append("div")
+                    .transition()
+                    .duration(1000)
+                    .on('click', function(onclick){
+                        return .style("background-color": red)
+                    });
                 
             }
         });
