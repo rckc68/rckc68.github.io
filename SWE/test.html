@@ -26,13 +26,13 @@
                 var candidateBar = d3.select("#graph2").selectAll("div#graph2").data(data.estimates),
                     candidateWrapper = candidateBar.enter().append("div").classed("group", true);
                 
-                candidateWrapper.append("div")
+                candidateWrapper.append("div#graph2")
                     .classed("choice", true)
                     .text(function(candidate) {
                         return candidate.choice + " " + candidate.value + "%";
                     });
                 
-                candidateWrapper.append("div")
+                candidateWrapper.append("div#graph2")
                     .classed("bar", true)
                     .transition()
                     .duration(1000)
@@ -40,7 +40,7 @@
                         return candidate.value * 10 + "px";
                     });
                     
-                candidateWrapper.select("#graph2")
+                candidateWrapper.select("div")
                     .on("click", function(){
                         candidateWrapper.select("div.bar")
                          .transition()
