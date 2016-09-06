@@ -8,15 +8,11 @@
 </head>
 <body>
     
+    
     <h1>2016 National GOP Primary</h1>
     <div id="graph"></div>
-    
-    <h1>2016 Democratic Primary</h1>
-    <div id="graph2"></div>
-    
-    
+
     <script>
-        
         var url = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary";
         
         $.ajax(url, {
@@ -41,6 +37,7 @@
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
                     });
+                    
                 candidateWrapper.select("div.bar")
                     .on("click", function(){
                         candidateWrapper.select("div.bar")
