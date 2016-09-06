@@ -2,7 +2,7 @@
 
 **Presidential Primary Data 2016**  
 
-This webpage shows the current standings of the 2016 Presidential Primary  
+This webpage shows the current standings of the 2016 National GOP Primary and the 2016 Democratic Primary.
 
 Tools used:
 
@@ -12,4 +12,4 @@ Tools used:
 
 *[HuffPost Pollster API](http://elections.huffingtonpost.com/pollster/api)  
 
-The visualization I created is...
+When clicked, the bars for the 2016 National GOP Primary candidates turn blue and the bars for the 2016 Democratic Primary candidates turn red.
