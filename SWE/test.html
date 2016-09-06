@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Presidential Primary Data 2016</title>
+    <link href="app.css" rel="stylesheet" type="text/css">
+    <script src="jquery-1.12.0.min.js"></script>
+    <script src="d3.v3.min.js"></script>
+</head>
+<body>
+    
+    <h1>2016 National GOP Primary</h1>
+    <div id="graph"></div>
+    
+    <h1>2016 Democratic Primary</h1>
+    <div id="graph2"></div>
+    
+    <script>
+        var url = "http://elections.huffingtonpost.com/pollster/api/charts/2016-iowa-democratic-presidential-primary";
+        
+        $.ajax(url, {
+            dataType: "jsonp",
+            jsonpCallback: "pollsterCallback",
+            cache: true,
+            success: function(data) {
+                
+                var candidateBar = d3.select("#graph2").selectAll("div#graph2").data(data.estimates),
+                    candidateWrapper = candidateBar.enter().append("div").classed("group", true);
+                
+                candidateWrapper.append("div")
+                    .classed("choice", true)
+                    .text(function(candidate) {
+                        return candidate.choice + " " + candidate.value + "%";
+                    });
+                
+                candidateWrapper.append("div")
+                    .classed("bar", true)
+                    .transition()
+                    .duration(1000)
+                    .style("width", function(candidate) {
+                        return candidate.value * 10 + "px";
+                    });
+                    
+                candidateWrapper.select("#graph2")
+                    .on("click", function(){
+                        candidateWrapper.select("div.bar")
+                         .transition()
+                         .duration(1000)   
+                         .style("background-color","red")
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
