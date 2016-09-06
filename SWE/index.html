@@ -41,9 +41,9 @@
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
                     });
-                candidateWrapper.select("graph .bar")
+                candidateWrapper.select("div")
                     .on("click", function(){
-                        candidateWrapper.select("candidate.choice")
+                        candidateWrapper.select("div.choice")
                          .transition()
                          .duration(1000)   
                          .attr("background-color","red")
