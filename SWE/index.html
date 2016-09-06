@@ -41,13 +41,7 @@
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
                     });
-                candidateWrapper.select("div.bar")
-                    .on("click", function(){
-                        candidateWrapper.select("div.bar")
-                         .transition()
-                         .duration(1000)   
-                         .style("background-color","blue")
-                    });
+                
                 
             }
         });
@@ -76,6 +70,13 @@
                     .duration(1000)
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
+                    });
+                    candidateWrapper.select("div.bar")
+                    .on("click", function(){
+                        candidateWrapper.select("div.bar")
+                         .transition()
+                         .duration(1000)   
+                         .style("background-color","blue")
                     });
                 
             }
